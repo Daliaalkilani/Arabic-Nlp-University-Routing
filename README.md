@@ -98,9 +98,3 @@ This task includes several NLP challenges:
 - Google Colab (T4 GPU)
 
 ---
-
-## ▶️ Usage
-
-```bash
-git clone https://github.com/Daliaalkilani/Arabic-Nlp-University-Routing.git
-cd Arabic-Nlp-University-Routing
