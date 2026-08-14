@@ -1,0 +1,53 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment and local files
+.env
+.env.*
+
+# Python / Flask
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.sqlite3
+.pytest_cache/
+
+# Instance uploads and local data
+instance/
+# Keep project assets in src/uploads
+!src/uploads/
+!src/uploads/**
+
+# Local uploads (root) - keep if present
+uploads/
+
+# Build outputs
+build/
+dist/
+
+# Large/sensitive model and DB files
+*.safetensors
+*.db

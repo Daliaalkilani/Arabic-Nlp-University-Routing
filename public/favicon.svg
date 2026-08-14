@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="نظام استفسارات الطلاب">
+  <circle cx="32" cy="32" r="32" fill="#1488F0"/>
+  <g fill="#FFFFFF">
+    <path d="M21 26.5h22v11.2c0 3.4-4.9 5.6-11 5.6s-11-2.2-11-5.6V26.5z"/>
+    <path d="M32 14.2 4.2 24.6 32 35l27.8-10.4L32 14.2z"/>
+  </g>
+  <g fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round">
+    <path d="M54.4 26.4v10.1"/>
+    <path d="M52.2 41.6 51 47.4M54.4 42.1v5.8M56.6 41.6l1.2 5.8"/>
+  </g>
+  <circle cx="54.4" cy="39" r="2.8" fill="#FFFFFF"/>
+</svg>

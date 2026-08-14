@@ -1,0 +1,285 @@
+/* =========================================================================
+   🌙 الوضع الليلي — يُفعّل عبر <html data-theme="dark">
+   هالملف لازم ينستورد بآخر شي بـ main.jsx حتى يتغلب على باقي ملفات CSS
+   ========================================================================= */
+
+:root[data-theme="dark"] {
+  --dm-bg: #0f1420;
+  --dm-bg-soft: #151b2b;
+  --dm-surface: #1a2233;
+  --dm-surface-alt: #1f2837;
+  --dm-border: #2a3448;
+  --dm-text: #e2e8f0;
+  --dm-text-muted: #94a3b8;
+  --dm-text-dim: #64748b;
+}
+
+/* ===== خلفية عامة للموقع ===== */
+:root[data-theme="dark"] body,
+:root[data-theme="dark"] #root {
+  background-color: var(--dm-bg);
+  color: var(--dm-text);
+}
+
+/* ===== الصفحة الرئيسية (App.css) ===== */
+:root[data-theme="dark"] .features {
+  background-color: var(--dm-bg);
+}
+:root[data-theme="dark"] .card-box {
+  background: var(--dm-surface);
+  border-color: var(--dm-border);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+:root[data-theme="dark"] .card-box h3 { color: #ffffff; }
+:root[data-theme="dark"] .card-box p { color: var(--dm-text-muted); }
+:root[data-theme="dark"] .card-icon { background: linear-gradient(135deg, #1e293b, #0f172a); }
+:root[data-theme="dark"] .features h2 { color: #ffffff; }
+:root[data-theme="dark"] .feature-circle { background: var(--dm-surface-alt); }
+:root[data-theme="dark"] .feature-item h5 { color: #ffffff; }
+:root[data-theme="dark"] .feature-item p { color: var(--dm-text-muted); }
+:root[data-theme="dark"] .auth-footer-text { color: var(--dm-text-muted); }
+
+/* ===== صفحات المعلومات (InfoPage.css) ===== */
+:root[data-theme="dark"] .info-page { background: var(--dm-bg); }
+:root[data-theme="dark"] .info-page-content { color: var(--dm-text-muted); }
+:root[data-theme="dark"] .info-page-content .contact-line {
+  background: var(--dm-surface);
+  border-color: var(--dm-border);
+  color: #e2e8f0;
+}
+
+/* ===== نوافذ تسجيل الدخول والتسجيل (Auth.css) ===== */
+:root[data-theme="dark"] .auth-card {
+  background: var(--dm-surface);
+  color: var(--dm-text);
+}
+:root[data-theme="dark"] .auth-header h2,
+:root[data-theme="dark"] .input-group-custom label {
+  color: #ffffff;
+}
+/* (البند 13) تفتيح عنوان نوافذ التسجيل إلى أزرق فاتح لزيادة التباين في الوضع الداكن */
+:root[data-theme="dark"] .register-card .auth-header h2 {
+  color: #9ec5fe;
+}
+:root[data-theme="dark"] .auth-header p { color: var(--dm-text-muted); }
+:root[data-theme="dark"] .input-group-custom input,
+:root[data-theme="dark"] .input-group-custom select {
+  background: var(--dm-bg-soft);
+  border-color: var(--dm-border);
+  color: var(--dm-text);
+}
+/* 🩹 تحييد خلفية الإكمال التلقائي (Chrome autofill) في الوضع الداكن لتطابق خلفية الحقول الداكنة الموحّدة */
+:root[data-theme="dark"] .input-group-custom input:-webkit-autofill,
+:root[data-theme="dark"] .input-group-custom input:-webkit-autofill:hover,
+:root[data-theme="dark"] .input-group-custom input:-webkit-autofill:focus,
+:root[data-theme="dark"] .input-group-custom input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px var(--dm-bg-soft) inset !important;
+  -webkit-text-fill-color: var(--dm-text) !important;
+  caret-color: var(--dm-text) !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+/* لون النص التوضيحي (placeholder) واضح في الوضع الداكن */
+:root[data-theme="dark"] .input-group-custom input::placeholder {
+  color: var(--dm-text-muted);
+}
+:root[data-theme="dark"] .close-modal {
+  background: var(--dm-surface-alt);
+  color: var(--dm-text-muted);
+}
+:root[data-theme="dark"] .file-upload-label {
+  background: var(--dm-bg-soft);
+  border-color: var(--dm-border);
+  color: var(--dm-text-muted);
+}
+:root[data-theme="dark"] .auth-footer span,
+:root[data-theme="dark"] .login-link { color: var(--dm-text-muted); }
+
+/* ===== لوحة الطالب (StudentDash.css) ===== */
+:root[data-theme="dark"] .dash-container { background-color: var(--dm-bg); }
+:root[data-theme="dark"] .sidebar {
+  background: var(--dm-surface);
+  border-color: var(--dm-border);
+}
+/* (البند 10) "بوابة الطالب" وأيقونتها بأزرق فاتح متطابق لزيادة التباين في الوضع الداكن */
+:root[data-theme="dark"] .sidebar-header .portal-brand,
+:root[data-theme="dark"] .sidebar-header i {
+  color: #6ea8fe;
+}
+:root[data-theme="dark"] .nav-item { color: var(--dm-text-muted); }
+:root[data-theme="dark"] .nav-item:hover,
+:root[data-theme="dark"] .nav-item.active {
+  background: var(--dm-surface-alt);
+  color: #6ea8fe;
+}
+:root[data-theme="dark"] .query-section,
+:root[data-theme="dark"] .settings-card,
+:root[data-theme="dark"] .guide-card,
+:root[data-theme="dark"] .conv-card,
+:root[data-theme="dark"] .history-card {
+  background: var(--dm-surface);
+  border-color: var(--dm-border);
+}
+:root[data-theme="dark"] .query-section h4,
+:root[data-theme="dark"] .settings-card-title,
+:root[data-theme="dark"] .profile-value,
+:root[data-theme="dark"] .password-field label {
+  color: #ffffff;
+}
+/* (البند 12) "بيانات حسابك وإدارة كلمة المرور" أبيض في الوضع الداكن.
+   نستخدم !important للضرورة القصوى للتغلّب على .text-muted !important من Bootstrap. */
+:root[data-theme="dark"] .settings-subtitle { color: #ffffff !important; }
+:root[data-theme="dark"] .input-wrapper textarea,
+:root[data-theme="dark"] .password-field input {
+  background: var(--dm-bg-soft);
+  color: var(--dm-text);
+}
+:root[data-theme="dark"] .upload-button {
+  background: var(--dm-surface-alt);
+  color: var(--dm-text-muted);
+}
+:root[data-theme="dark"] .profile-field { background: var(--dm-bg-soft); }
+:root[data-theme="dark"] .conv-preview { color: var(--dm-text-muted); }
+:root[data-theme="dark"] .mt-4.p-3 { background: var(--dm-surface) !important; border-color: var(--dm-border) !important; }
+/* (البند 11) نص "استفسارك محمي ومشفر..." أبيض في الوضع الداكن.
+   نستخدم !important هنا للضرورة القصوى: كلاس .text-muted في Bootstrap معرّف بـ !important. */
+:root[data-theme="dark"] .mt-4.p-3 .text-muted { color: #ffffff !important; }
+
+/* ===== اختيار نوع الاستفسار + بطاقة إجابة اللوائح والأنظمة (StudentDash.css) ===== */
+:root[data-theme="dark"] .inquiry-choice-btn {
+  background: var(--dm-surface);
+  border-color: var(--dm-border);
+}
+:root[data-theme="dark"] .inquiry-choice-btn:hover {
+  border-color: #6ea8fe;
+}
+:root[data-theme="dark"] .inquiry-choice-btn span { color: #ffffff; }
+:root[data-theme="dark"] .inquiry-choice-btn small { color: var(--dm-text-muted); }
+:root[data-theme="dark"] .inquiry-back-btn { color: #6ea8fe; }
+:root[data-theme="dark"] .qa-answer-card {
+  background: var(--dm-bg-soft);
+  border-color: var(--dm-border);
+}
+:root[data-theme="dark"] .qa-answer-text { color: var(--dm-text); }
+
+/* ===== لوحة الموظف (OfficeDashboard.css) ===== */
+:root[data-theme="dark"] .admin-dash,
+:root[data-theme="dark"] .admin-main { background-color: var(--dm-bg); }
+:root[data-theme="dark"] .admin-header {
+  background: var(--dm-surface);
+  border-color: var(--dm-border);
+}
+:root[data-theme="dark"] .header-info h4 { color: #ffffff; }
+/* (البند 9) نص "هذه المحادثات اقترح..." أبيض في الوضع الداكن.
+   نستخدم !important للضرورة القصوى للتغلّب على .text-muted !important من Bootstrap. */
+:root[data-theme="dark"] .header-info p.text-muted { color: #ffffff !important; }
+:root[data-theme="dark"] .user-profile { color: var(--dm-text); }
+:root[data-theme="dark"] .query-item {
+  background: var(--dm-surface);
+  border-color: var(--dm-border);
+}
+:root[data-theme="dark"] .student-name { color: #ffffff; }
+:root[data-theme="dark"] .query-text {
+  background: var(--dm-bg-soft);
+  color: var(--dm-text);
+}
+:root[data-theme="dark"] .archive-btn {
+  background: var(--dm-surface-alt);
+  color: var(--dm-text-muted);
+  border-color: var(--dm-border);
+}
+:root[data-theme="dark"] .empty-state { background: var(--dm-surface); }
+
+/* مودالات الرد وإعادة التوجيه */
+:root[data-theme="dark"] .of-modal-card { background: var(--dm-surface); color: var(--dm-text); }
+:root[data-theme="dark"] .of-modal-header h5,
+:root[data-theme="dark"] .of-field-label { color: #ffffff; }
+:root[data-theme="dark"] .of-modal-quote { background: var(--dm-bg-soft); }
+:root[data-theme="dark"] .of-modal-quote p { color: var(--dm-text); }
+:root[data-theme="dark"] .of-textarea,
+:root[data-theme="dark"] .of-office-trigger {
+  background: var(--dm-bg-soft);
+  color: var(--dm-text);
+}
+:root[data-theme="dark"] .of-office-menu { background: var(--dm-surface-alt); border-color: var(--dm-border); }
+:root[data-theme="dark"] .of-office-option { color: var(--dm-text); }
+:root[data-theme="dark"] .of-file-upload-label {
+  background: var(--dm-bg-soft);
+  border-color: var(--dm-border);
+  color: var(--dm-text-muted);
+}
+:root[data-theme="dark"] .of-btn-ghost { background: var(--dm-surface-alt); color: var(--dm-text); }
+:root[data-theme="dark"] .of-modal-close { background: var(--dm-surface-alt); color: var(--dm-text-muted); }
+
+/* ===== لوحة الأدمن (AdminDashboard.css) ===== */
+:root[data-theme="dark"] .admin-shell { background: var(--dm-bg); }
+:root[data-theme="dark"] .a-main { background: var(--dm-bg); }
+:root[data-theme="dark"] .a-topbar h2 { color: #ffffff; }
+:root[data-theme="dark"] .a-topbar p,
+:root[data-theme="dark"] .a-panel-head span,
+:root[data-theme="dark"] .a-label,
+:root[data-theme="dark"] .a-muted { color: var(--dm-text-muted); }
+:root[data-theme="dark"] .a-admin-chip {
+  background: var(--dm-surface);
+  border-color: var(--dm-border);
+  color: var(--dm-text);
+}
+:root[data-theme="dark"] .a-stat-card,
+:root[data-theme="dark"] .a-panel,
+:root[data-theme="dark"] .a-color-card-icon {
+  background: var(--dm-surface);
+  border-color: var(--dm-border);
+}
+:root[data-theme="dark"] .a-num,
+:root[data-theme="dark"] .a-panel-head h4 { color: #ffffff; }
+:root[data-theme="dark"] .a-tab-btn {
+  background: var(--dm-surface);
+  border-color: var(--dm-border);
+  color: var(--dm-text-muted);
+}
+:root[data-theme="dark"] table.a-table th {
+  color: var(--dm-text-muted);
+  border-color: var(--dm-border);
+}
+:root[data-theme="dark"] table.a-table td {
+  border-color: var(--dm-border);
+  color: var(--dm-text);
+}
+:root[data-theme="dark"] table.a-table tr:hover td { background: var(--dm-bg-soft); }
+:root[data-theme="dark"] .a-empty { color: var(--dm-text-muted); }
+:root[data-theme="dark"] .a-gauge-track { background: var(--dm-bg-soft); }
+:root[data-theme="dark"] .a-gauge-label { color: var(--dm-text); }
+
+/* ===== المحادثة (ChatThread.css) ===== */
+:root[data-theme="dark"] .chat-card { background: var(--dm-bg-soft); }
+:root[data-theme="dark"] .chat-body {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(13,110,253,.08) 0, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(5,44,101,.12) 0, transparent 40%),
+    var(--dm-bg-soft);
+}
+:root[data-theme="dark"] .chat-bubble-row.theirs .chat-bubble {
+  background: var(--dm-surface);
+  color: var(--dm-text);
+}
+:root[data-theme="dark"] .chat-input-row {
+  background: var(--dm-surface);
+  border-color: var(--dm-border);
+}
+:root[data-theme="dark"] .chat-text-input {
+  background: var(--dm-bg-soft);
+  color: var(--dm-text);
+}
+:root[data-theme="dark"] .chat-attach-btn { background: var(--dm-surface-alt); }
+:root[data-theme="dark"] .chat-empty { color: var(--dm-text-dim); }
+
+/* ===== التوست (Toast.css) ===== */
+:root[data-theme="dark"] .app-toast {
+  background: rgba(26, 34, 51, 0.97);
+}
+:root[data-theme="dark"] .app-toast-success { color: #cbd9f5; }
+:root[data-theme="dark"] .app-toast-error { color: #fecaca; }
+
+/* ===== تحسين تجربة السكرول بار بالوضع الليلي (اختياري لطيف) ===== */
+:root[data-theme="dark"] ::-webkit-scrollbar { width: 10px; height: 10px; }
+:root[data-theme="dark"] ::-webkit-scrollbar-track { background: var(--dm-bg); }
+:root[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--dm-border); border-radius: 10px; }

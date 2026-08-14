@@ -1,0 +1,193 @@
+/* Auth.css */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    backdrop-filter: blur(10px);
+    direction: rtl;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.auth-card {
+    background: white;
+    width: 90%;
+    max-width: 480px;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    position: relative;
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+.register-card {
+    max-width: 600px;
+}
+
+/* عنوان نوافذ الدخول والتسجيل باللون الكحلي في الوضع الفاتح.
+   يُفتَّح تلقائياً في الوضع الداكن عبر darkMode.css: أبيض لنوافذ الدخول، وأزرق فاتح لنوافذ التسجيل. */
+.auth-header h2 {
+    color: #052c65;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #f1f5f9;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    color: #64748b;
+    transition: 0.3s;
+}
+
+.close-modal:hover {
+    background: #ef4444;
+    color: white;
+}
+
+.input-group-custom {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.input-group-custom label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.input-group-custom input, .input-group-custom select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #f1f5f9;
+    border-radius: 12px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group-custom input:focus {
+    border-color: #0d6efd;
+}
+
+/* لون النص التوضيحي (placeholder) موحّد وواضح في الوضعين */
+.input-group-custom input::placeholder {
+    color: #94a3b8;
+}
+
+/* 🩹 تحييد خلفية الإكمال التلقائي للمتصفح (Chrome autofill) — الوضع الفاتح.
+   المتصفح يفرض خلفية زرقاء/صفراء على الحقول المعبّأة تلقائياً عبر :-webkit-autofill،
+   فنعيد طلاءها بخلفية الحقل البيضاء الموحّدة. (!important ضروري تقنياً هنا فقط.) */
+.input-group-custom input:-webkit-autofill,
+.input-group-custom input:-webkit-autofill:hover,
+.input-group-custom input:-webkit-autofill:focus,
+.input-group-custom input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+    -webkit-text-fill-color: #1e293b !important;
+    caret-color: #1e293b !important;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+.file-upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 2px dashed #cbd5e1;
+    border-radius: 15px;
+    background: #f8fafc;
+    cursor: pointer;
+    color: #64748b;
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 14px;
+    background: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+
+}
+/* تصميم شريط الترحيب الذي ينبثق من الزاوية السفلية اليمنى */
+.bottom-corner-toast {
+  position: fixed;
+  bottom: 25px; /* تثبيته على مسافة من الأسفل */
+  right: 25px;  /* تثبيته في الزاوية اليمنى */
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(13, 110, 253, 0.25);
+  padding: 18px 24px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+  z-index: 10000; /* قيمة عالية جداً ليكون فوق كرت الدخول والمودل */
+  direction: rtl;
+  font-weight: 600;
+  color: #052c65;
+  max-width: 400px;
+  animation: slideUpFadeIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.toast-content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+
+.toast-star-icon {
+  color: #0d6efd;
+  font-size: 22px;
+  animation: pulseStars 1.5s infinite ease-in-out;
+}
+
+/* خط التحميل الزمني أسفل التنبيه */
+.toast-progress-bar {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #6ea8fe, #0d6efd);
+  width: 100%;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  animation: shrinkWidth 2.5s linear forwards;
+}
+
+/* أنيميشن الانزلاق من الأسفل إلى الأعلى بنعومة */
+@keyframes slideUpFadeIn {
+  0% { bottom: -60px; opacity: 0; transform: scale(0.9); }
+  100% { bottom: 25px; opacity: 1; transform: scale(1); }
+}
+
+@keyframes shrinkWidth {
+  0% { width: 100%; }
+  100% { width: 0%; }
+}
+
+@keyframes pulseStars {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+}

@@ -1,0 +1,95 @@
+/* =========================================================
+   🌙 زر عائم حديث لتبديل الوضع الليلي/النهاري (Pill Switch)
+   ثابت بزاوية الشاشة، فوق كل المحتوى بكل الصفحات
+   ========================================================= */
+
+.theme-fab {
+  position: fixed;
+  bottom: 26px;
+  left: 26px;
+  z-index: 9999;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(5, 44, 101, 0.22);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.theme-fab:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 14px 34px rgba(5, 44, 101, 0.3);
+}
+.theme-fab:active { transform: translateY(-1px) scale(0.98); }
+
+.theme-fab-track {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 64px;
+  height: 34px;
+  border-radius: 999px;
+  padding: 0 9px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background 0.3s ease;
+}
+
+/* ===== الوضع النهاري: مسار أزرق فاتح، الشمس واضحة ===== */
+.theme-fab.is-light .theme-fab-track {
+  background: linear-gradient(135deg, #eaf2ff, #dbe9ff);
+  border: 1px solid rgba(13, 110, 253, 0.18);
+}
+
+/* ===== الوضع الليلي: مسار كحلي غامق، النجوم/القمر واضح ===== */
+.theme-fab.is-dark .theme-fab-track {
+  background: linear-gradient(135deg, #16213a, #0c1526);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.theme-fab-icon {
+  font-size: 13px;
+  z-index: 1;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.theme-fab-icon.sun { color: #f59e0b; margin-inline-end: auto; }
+.theme-fab-icon.moon { color: #c7d2fe; margin-inline-start: auto; }
+
+.theme-fab.is-light .theme-fab-icon.sun { opacity: 1; transform: scale(1); }
+.theme-fab.is-light .theme-fab-icon.moon { opacity: .35; transform: scale(.85); }
+.theme-fab.is-dark .theme-fab-icon.sun { opacity: .3; transform: scale(.85); }
+.theme-fab.is-dark .theme-fab-icon.moon { opacity: 1; transform: scale(1); }
+
+/* ===== المقبض المنزلق (Thumb) ===== */
+.theme-fab-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  transition: transform 0.35s cubic-bezier(.34, 1.56, .64, 1), background 0.3s ease;
+}
+
+.theme-fab.is-light .theme-fab-thumb {
+  transform: translateX(0);
+  background: linear-gradient(135deg, #ffb800, #ff8a00);
+}
+.theme-fab.is-dark .theme-fab-thumb {
+  transform: translateX(30px);
+  background: linear-gradient(135deg, #0d6efd, #052c65);
+}
+
+/* بالوضع RTL: المقبض لازم ينزلق بنفس الاتجاه البصري الصحيح */
+[dir="rtl"] .theme-fab.is-light .theme-fab-thumb { transform: translateX(0); }
+[dir="rtl"] .theme-fab.is-dark .theme-fab-thumb { transform: translateX(30px); }
+
+@media (max-width: 480px) {
+  .theme-fab { bottom: 18px; left: 18px; }
+}

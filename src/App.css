@@ -1,0 +1,239 @@
+/* ===== التنسيقات العامة والخطوط ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Tajawal', Arial, sans-serif;
+    direction: rtl;
+    background-color: #f5f7fb;
+}
+
+/* ===== Navbar (يمتد بكامل العرض مهما كان سجن الحاوية الخارجي) ===== */
+.navbar-custom {
+    background-color: #052c65;
+    padding: 15px 40px;
+    
+    /* 🌟 التمدد القسري الكامل */
+    width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+}
+
+.navbar-brand,
+.navbar-brand i {
+    color: #ffffff !important;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #9ec5fe !important;
+}
+
+/* ===== Hero Section (يمتد بكامل العرض مهما كان سجن الحاوية الخارجي) ===== */
+.hero {
+    background: linear-gradient(rgba(5,44,101,0.75), rgba(5,44,101,0.75)),
+                url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+    padding: 40px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    
+    /* 🌟 التمدد القسري الكامل */
+    width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+}
+
+.hero h1 {
+    font-size: 55px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 22px;
+    max-width: 900px;
+    line-height: 1.8;
+}
+
+/* ===== Cards (✨ تحديث فني مودرن بكامل الأناقة والهندسة البصرية) ===== */
+.cards-container {
+    margin-top: -100px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.card-box {
+    background: #ffffff;
+    width: 340px; /* عرض مريح جداً للكروت */
+    border-radius: 30px; /* زوايا أنعم وأكثر عصرية */
+    padding: 45px 30px 35px; /* توزيع مساحات مريح للعين */
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(5, 44, 101, 0.04); /* ظلال ناعمة جداً غير مشتتة */
+    border: 1px solid rgba(13, 110, 253, 0.06);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 480px; /* توحيد الارتفاع لتبدو الكروت متناسقة هندسياً ولا تقفز */
+}
+
+.card-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(5, 44, 101, 0.12);
+    border-color: rgba(13, 110, 253, 0.25);
+}
+
+/* الأيقونات المودرن الدائرية الناعمة بتأثير التيك الحديث */
+.card-icon {
+    width: 85px;
+    height: 85px;
+    border-radius: 24px; /* زوايا دائرية فخمة وليست دائرة كاملة */
+    background: linear-gradient(135deg, #f0f7ff, #e2efff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 25px;
+    transition: all 0.3s ease;
+}
+
+.card-icon i {
+    font-size: 38px;
+    color: #0d6efd;
+    transition: all 0.3s ease;
+}
+
+.card-box:hover .card-icon {
+    background: linear-gradient(135deg, #0d6efd, #052c65);
+}
+
+.card-box:hover .card-icon i {
+    color: #ffffff; /* تنعكس الأيقونة للأبيض عند تمرير الماوس */
+}
+
+.card-box h3 {
+    color: #052c65;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.card-box p {
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* ===== Buttons (✨ أزرار فخمة وذكية خالية من التشوهات البصرية) ===== */
+.btn-custom {
+    background: linear-gradient(135deg, #0d6efd, #052c65);
+    color: white;
+    width: 100%;
+    padding: 14px;
+    border-radius: 16px; /* زوايا متناسقة مع كرت العرض */
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+    box-shadow: 0 6px 20px rgba(13, 110, 253, 0.15);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-custom:hover {
+    box-shadow: 0 8px 25px rgba(13, 110, 253, 0.25);
+    transform: translateY(-1px);
+}
+
+/* 🌟 الرابط النصي الفني المطور كبديل لزر "إنشاء الحساب" القديم والمزعج */
+.auth-footer-text {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.btn-register-link {
+    background: none;
+    border: none;
+    color: #0d6efd;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0;
+    margin-right: 5px;
+    display: inline-block;
+    transition: 0.2s;
+    font-family: 'Tajawal', Arial, sans-serif;
+}
+
+.btn-register-link:hover {
+    color: #052c65;
+    text-decoration: underline;
+}
+
+/* ===== Features Section ===== */
+.features {
+    margin-top: 60px;
+    padding: 80px 20px;
+    text-align: center;
+    background-color: white;
+}
+
+.features h2 {
+    color: #052c65;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.feature-item {
+    width: 280px;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.feature-item:hover {
+    transform: scale(1.05);
+}
+
+.feature-circle {
+    width: 80px;
+    height: 80px;
+    background: #e9f2ff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+}
+
+.feature-circle i {
+    font-size: 35px;
+    color: #0d6efd;
+}

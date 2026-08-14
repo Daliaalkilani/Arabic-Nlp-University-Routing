@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700&display=swap');
+
+/* ضبط عام وإلغاء الهوامش الافتراضية للمتصفح */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7fa;
+}
+
+/* ==========================================================================
+   🌟 صواريخ نسف الحواف البيضاء وتمديد لوحة الموظف بالكامل (من الحافة للحافة)
+   ========================================================================== */
+.admin-dash {
+  display: flex;
+  height: 100vh;
+  background-color: #f4f7fa;
+  direction: rtl; /* لضمان الترتيب الصحيح من اليمين لليسار */
+
+  /* التمدد القسري الكامل لكسر سجن البوتستراب الخارجي */
+  width: 100vw !important;
+  margin-left: calc(-50vw + 50%) !important;
+  margin-right: calc(-50vw + 50%) !important;
+  padding: 0 !important;
+}
+
+/* ---------------------------------------------------
+   Sidebar التنسيقات الخاصة بالقائمة الجانبية 
+   --------------------------------------------------- */
+.admin-sidebar {
+  width: 280px; /* عرض ثابت ومناسب للقائمة */
+  background-color: #052c65; /* الأزرق الغامق الفخم */
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 15px;
+  height: 100%;
+  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0; /* يمنع انضغاط السايدبار */
+}
+
+.admin-sidebar .brand {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.admin-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-nav li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+/* الكلاس الخاص بتعطيل المكاتب الأخرى التي لا تخص الموظف الحالي */
+.disabled-nav-item {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* تصميم العنصر النشط (مكتب الموظف الحالي المفتوح) */
+.disabled-nav-item.active {
+  background-color: #0d6efd; /* الأزرق المعتمد لزر الدخول */
+  color: #ffffff;
+  opacity: 1 !important;
+  font-weight: 600;
+}
+
+.logout-item {
+  margin-top: auto; /* يدفع زر تسجيل الخروج لأسفل السايدبار */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  color: #f87171;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.logout-item:hover {
+  background-color: rgba(248, 113, 113, 0.1);
+}
+
+/* ---------------------------------------------------
+   Main Content التنسيقات الخاصة بالمحتوى الرئيسي 
+   --------------------------------------------------- */
+.admin-main {
+  flex-grow: 1; /* يجعل المحتوى يفرش كل المساحة المتبقية من الشاشة */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* يسمح بعمل سكرول للاستفسارات إذا كانت كثيرة */
+  background-color: #f8fafc;
+}
+
+/* الهيدر العلوي */
+.admin-header {
+  background-color: #ffffff;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.header-info h4 {
+  color: #052c65;
+  font-size: 1.3rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.office-badge {
+  background-color: rgba(13, 110, 253, 0.1);
+  color: #0d6efd;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.user-profile {
+  font-weight: 600;
+  color: #334155;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+}
+
+/* ---------------------------------------------------
+   Query List قائمة كروت الاستفسارات الواردة 
+   --------------------------------------------------- */
+.query-list {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1200px; /* يعطي عرضاً مريحاً للعين لقراءة النصوص دون تشتت */
+  width: 100%;
+  margin: 0 auto; /* يوسط قائمة الكروت داخل المساحة الكبيرة المفرودة */
+}
+
+.query-item {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.query-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed #e2e8f0;
+  padding-bottom: 10px;
+}
+
+.student-name {
+  font-weight: 600;
+  color: #052c65;
+}
+
+.time {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.query-text {
+  color: #334155;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  background-color: #f8fafc;
+  padding: 15px;
+  border-radius: 8px;
+  border-right: 4px solid #0d6efd; /* خط أزرق مميز بجانب السؤال */
+}
+
+/* الأزرار التفاعلية للكارت */
+.query-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.reply-btn {
+  background-color: #0d6efd;
+  color: white;
+  border: None;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.reply-btn:hover {
+  background-color: #0b5ed7;
+}
+
+.archive-btn {
+  background-color: #fff;
+  color: #64748b;
+  border: 1px solid #cbd5e1;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.archive-btn:hover {
+  background-color: #f1f5f9;
+  color: #334155;
+}
+
+/* شاشة فارغة في حال لا توجد بيانات */
+.empty-state {
+  text-align: center;
+  padding: 60px;
+  background-color: #fff;
+  border-radius: 12px;
+  border: 1px dashed #cbd5e1;
+  color: #64748b;
+}
+/* =========================================================
+   🌟 مودالات الرد الرسمي وإعادة التوجيه — تصميم متناسق مع هوية التطبيق
+   ========================================================= */
+.of-modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(5, 44, 101, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 2000; padding: 20px;
+  animation: ofFadeIn .2s ease;
+}
+@keyframes ofFadeIn { from{ opacity:0; } to{ opacity:1; } }
+
+.of-modal-card {
+  background: #fff;
+  width: 100%; max-width: 640px;
+  border-radius: 26px;
+  padding: 36px 38px;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(5, 44, 101, 0.25);
+  animation: ofModalIn .3s cubic-bezier(.175,.885,.32,1.275);
+  direction: rtl;
+  font-family: 'Tajawal', 'Segoe UI', sans-serif;
+}
+@keyframes ofModalIn { from{ opacity:0; transform: translateY(14px) scale(.96); } to{ opacity:1; transform: translateY(0) scale(1); } }
+
+.of-modal-close {
+  position: absolute; top: 18px; left: 18px;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: #f1f5f9; border: none; color: #64748b;
+  font-size: 18px; cursor: pointer; transition: .2s;
+}
+.of-modal-close:hover { background: #ef4444; color: #fff; }
+
+.of-modal-header {
+  display: flex; align-items: center; gap: 18px;
+  margin-bottom: 26px;
+}
+.of-modal-icon {
+  width: 58px; height: 58px; border-radius: 16px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; color: #fff;
+}
+.of-modal-icon-reply { background: linear-gradient(135deg, #0d6efd, #052c65); }
+.of-modal-icon-redirect { background: linear-gradient(135deg, #0d6efd, #052c65); }
+
+.of-modal-header h5 { margin: 0; font-weight: 800; color: #052c65; font-size: 1.15rem; }
+.of-modal-student { color: #64748b; font-size: .88rem; font-weight: 600; }
+
+.of-modal-quote {
+  display: flex; gap: 10px; align-items: flex-start;
+  background: #f8fafc; border-right: 4px solid #0d6efd;
+  border-radius: 12px; padding: 16px 18px; margin-bottom: 24px;
+}
+.of-modal-quote i { color: #0d6efd; font-size: 1.4rem; transform: scaleX(-1); }
+.of-modal-quote p { margin: 0; color: #334155; font-size: .98rem; line-height: 1.7; }
+
+.of-field-label {
+  display: block; font-weight: 700; color: #052c65;
+  font-size: .9rem; margin-bottom: 10px;
+}
+
+.of-textarea {
+  width: 100%; background: #f5f7fb; border: 2px solid transparent;
+  border-radius: 16px; padding: 16px 18px; font-size: 1rem;
+  min-height: 130px; line-height: 1.7;
+  font-family: inherit; resize: vertical; outline: none;
+  transition: .25s; margin-bottom: 20px;
+}
+.of-textarea:focus { background: #fff; border-color: #0d6efd; box-shadow: 0 4px 14px rgba(13,110,253,.12); }
+
+.of-select {
+  width: 100%; background: #f5f7fb; border: 2px solid transparent;
+  border-radius: 16px; padding: 14px 16px; font-size: .95rem;
+  font-family: inherit; outline: none; color: #052c65; font-weight: 600;
+  transition: .25s; margin-bottom: 22px; cursor: pointer;
+}
+.of-select:focus { background: #fff; border-color: #0d6efd; }
+
+.of-file-upload { margin-bottom: 28px; }
+.of-file-upload-label {
+  display: flex; align-items: center; gap: 12px;
+  background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 14px;
+  padding: 16px 18px; cursor: pointer; color: #64748b;
+  font-size: .92rem; font-weight: 600; transition: .2s;
+}
+.of-file-upload-label:hover { border-color: #0d6efd; background: #f0f7ff; }
+.of-file-upload-label i { color: #0d6efd; font-size: 1.3rem; flex-shrink: 0; }
+
+.of-modal-actions {
+  display: flex; justify-content: flex-end; gap: 10px;
+}
+.of-btn {
+  border: none; border-radius: 14px; padding: 12px 24px;
+  font-weight: 700; font-size: .92rem; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: .2s; font-family: inherit;
+}
+.of-btn:disabled { opacity: .5; cursor: not-allowed; transform: none !important; }
+.of-btn-ghost { background: #f1f5f9; color: #475569; }
+.of-btn-ghost:hover { background: #e2e8f0; }
+.of-btn-primary { background: linear-gradient(135deg, #0d6efd, #052c65); color: #fff; box-shadow: 0 8px 20px rgba(13,110,253,.28); }
+.of-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(13,110,253,.35); }
+.of-btn-warning { background: linear-gradient(135deg, #0d6efd, #052c65); color: #fff; box-shadow: 0 8px 20px rgba(13,110,253,.28); }
+.of-btn-warning:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(13,110,253,.35); }
+
+/* =========================================================
+   🌟 القائمة المنسدلة المخصّصة لاختيار المكتب المستهدف بالتحويل
+   ========================================================= */
+.of-office-picker { position: relative; margin-bottom: 22px; }
+
+.of-office-trigger {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  background: #f5f7fb; border: 2px solid transparent; border-radius: 16px;
+  padding: 12px 16px; cursor: pointer; font-family: inherit;
+  font-size: .95rem; color: #052c65; font-weight: 600;
+  transition: .2s;
+}
+.of-office-trigger:hover { background: #eef2f8; }
+.of-office-trigger.open { background: #fff; border-color: #0d6efd; box-shadow: 0 4px 14px rgba(13,110,253,.12); }
+.of-office-placeholder { color: #94a3b8; font-weight: 500; }
+
+.of-office-trigger-selected { display: flex; align-items: center; gap: 10px; }
+
+.of-office-dot {
+  width: 30px; height: 30px; border-radius: 10px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: .95rem;
+}
+
+.of-office-chevron { color: #94a3b8; transition: transform .2s; }
+.of-office-chevron.flipped { transform: rotate(180deg); color: #0d6efd; }
+
+.of-office-menu {
+  position: absolute; top: calc(100% + 8px); right: 0; left: 0;
+  background: #fff; border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(5,44,101,.18);
+  border: 1px solid #edf2f7;
+  padding: 8px; z-index: 30;
+  animation: ofMenuIn .18s ease;
+}
+@keyframes ofMenuIn { from{ opacity:0; transform: translateY(-6px); } to{ opacity:1; transform: translateY(0); } }
+
+.of-office-option {
+  width: 100%; display: flex; align-items: center; gap: 12px;
+  background: none; border: none; border-radius: 12px;
+  padding: 11px 12px; cursor: pointer; font-family: inherit;
+  font-size: .92rem; font-weight: 600; color: #334155;
+  transition: .15s; text-align: right;
+}
+.of-office-option:hover { background: color-mix(in srgb, var(--office-color) 10%, white); color: var(--office-color); }
+.of-office-option.selected { background: color-mix(in srgb, var(--office-color) 12%, white); color: var(--office-color); }
+.of-office-check { margin-right: auto; color: var(--office-color); font-size: 1.1rem; }

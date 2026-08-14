@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find \"/c/Users/Dell/Downloads/qa code\" -maxdepth 3 -type d 2>/dev/null)",
+      "Bash(mkdir -p \"/d/المشروع/my-new-app/src/qa_contexts\")",
+      "Bash(cp \"/c/Users/Dell/Downloads/qa code/final_contexts/Exams_Context.txt\" \"/d/المشروع/my-new-app/src/qa_contexts/Exams_Context.txt\")",
+      "Bash(cp \"/c/Users/Dell/Downloads/qa code/final_contexts/StudentAffairs_Context.txt\" \"/d/المشروع/my-new-app/src/qa_contexts/StudentAffairs_Context.txt\")",
+      "Bash(cp \"/c/Users/Dell/Downloads/qa code/final_contexts/FinancialAffairs_Context.txt\" \"/d/المشروع/my-new-app/src/qa_contexts/FinancialAffairs_Context.txt\")",
+      "Bash(cp \"/c/Users/Dell/Downloads/qa code/final_contexts/ITOffice_Context.txt\" \"/d/المشروع/my-new-app/src/qa_contexts/ITOffice_Context.txt\")",
+      "Bash(python -c \"import flask, torch, transformers, arabert; print\\('flask', flask.__version__\\); print\\('torch', torch.__version__\\); print\\('transformers', transformers.__version__\\)\")",
+      "PowerShell(py -0p 2>&1)",
+      "PowerShell(py -c \"import sys; print\\(sys.executable\\)\")",
+      "PowerShell(py -0p; Write-Output \"---\"; foreach \\($v in @\\('3.13','3.12','3.9'\\)\\) { Write-Output \"== $v ==\"; try { py \"-$v\" -c \"import flask, torch, transformers, arabert; print\\('flask', flask.__version__\\); print\\('torch', torch.__version__\\); print\\('transformers', transformers.__version__\\)\" } catch {} })",
+      "Bash(find \"/d/المشروع\" -maxdepth 4 -iname \"*venv*\" -o -iname \"site-packages\" 2>/dev/null | head -30)",
+      "PowerShell(foreach \\($v in @\\('3.13','3.12','3.9'\\)\\) { Write-Output \"== $v ==\"; py \"-$v\" -m pip list 2>&1 | Select-String -Pattern \"flask|torch|transformers|arabert\" -CaseSensitive:$false })",
+      "PowerShell(Get-Command node, npm -ErrorAction SilentlyContinue)",
+      "Bash(npm -v)",
+      "PowerShell(py -m pip --version)",
+      "PowerShell(py -m pip install --upgrade pip)",
+      "PowerShell(py -m pip install Flask Flask-SQLAlchemy Flask-Bcrypt Flask-Cors torch transformers arabert)",
+      "PowerShell(winget source reset --force)",
+      "PowerShell(winget source update)",
+      "PowerShell(winget install --id OpenJS.NodeJS.LTS --source winget --silent --accept-source-agreements --accept-package-agreements)",
+      "PowerShell(py -m pip install --retries 20 --timeout 600 torch --index-url https://download.pytorch.org/whl/cpu)",
+      "PowerShell(py -m pip install --retries 20 --timeout 300 \"transformers==4.49.0\")"
+    ]
+  }
+}

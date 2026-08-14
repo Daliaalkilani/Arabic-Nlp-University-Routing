@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+
+/* ==========================================================================
+   🌟 صواريخ نسف الحواف البيضاء وتمديد لوحة الطالب بكامل عرض الشاشة (من الحافة للحافة)
+   ========================================================================== */
+.dash-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #fcfdfe;
+    direction: rtl;
+    font-family: 'Tajawal', sans-serif;
+
+    /* السحر الحقيقي لكسر قيود البوتستراب والفرش العرضي الكامل */
+    width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    padding: 0 !important;
+}
+
+/* Sidebar - حجم مريح وثابت مكانه */
+.sidebar {
+    width: 270px;
+    background: #ffffff;
+    border-left: 1px solid #edf2f7;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.sidebar-header i { 
+    font-size: 30px; 
+    color: #0d6efd; 
+}
+
+.sidebar-header span {
+    font-size: 20px;
+    font-weight: 700;
+    color: #052c65;
+}
+
+/* 🌟 عنوان "بوابة الطالب" بلون هوية الموقع الأزرق ليتناسق مع الأيقونة المجاورة */
+.sidebar-header .portal-brand {
+    color: #0d6efd;
+}
+
+.nav-item {
+    padding: 12px 18px;
+    border-radius: 15px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #64748b;
+    font-size: 15px;
+}
+
+.nav-item:hover, .nav-item.active {
+    background: #f0f7ff;
+    color: #0d6efd;
+}
+
+/* Main Content - يتمدد ليأخذ بقية المساحة المفرودة ببراحة */
+.main-content {
+    flex: 1;
+    padding: 25px 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* الهيدر "المتوسط المثالي" الممتد بألوانه المتدرجة الفخمة */
+.glass-header {
+    background: linear-gradient(135deg, #052c65, #0d6efd);
+    border-radius: 28px;
+    padding: 25px 40px; /* مساحة مريحة للنصوص */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-bottom: 25px;
+    min-height: 120px; /* ارتفاع متوازن */
+    box-shadow: 0 12px 25px rgba(13, 110, 253, 0.12);
+}
+
+.text-content h1 { 
+    font-size: 26px; 
+    margin-bottom: 8px; 
+    font-weight: 700; 
+}
+
+.text-content p { 
+    font-size: 16px; 
+    opacity: 0.85; 
+}
+
+/* الروبوت "حجم وسط" */
+.robot-img-container img {
+    width: 130px; /* لا هو 220 ولا هو 70، حجم مثالي */
+    height: auto;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+/* صندوق الاستفسار الذكي */
+.query-section {
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 30px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.04);
+    border: 1px solid #f1f5f9;
+}
+
+.query-section h4 { 
+    font-size: 18px; 
+    margin-bottom: 15px !important; 
+    color: #052c65; 
+}
+
+.input-wrapper textarea {
+    width: 100%;
+    border: 2px solid #f1f5f9;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 16px;
+    min-height: 140px;
+    outline: none;
+    resize: none;
+    background: #ebeef1;
+    font-family: 'Tajawal', sans-serif;
+}
+
+/* منطقة الأزرار */
+.action-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.upload-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f1f5f9;
+    padding: 12px 22px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #475569;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.upload-button i { 
+    font-size: 24px; 
+    color: #0d6efd; 
+}
+
+.send-btn {
+    background: #0d6efd;
+    color: white;
+    border: none;
+    padding: 14px 40px;
+    border-radius: 18px;
+    font-weight: 700;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.send-btn:hover {
+    background: #0b5ed7;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+}
+
+/* =========================================================
+   🌟 قسم "الإعدادات"
+   ========================================================= */
+.settings-section { display: flex; flex-direction: column; gap: 20px; }
+
+.settings-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 26px 28px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.04);
+    border: 1px solid #f1f5f9;
+}
+
+.settings-card-title {
+    display: flex; align-items: center; gap: 10px;
+    color: #052c65; font-weight: 700; font-size: 1rem;
+    margin-bottom: 20px;
+}
+.settings-card-title i { color: #0d6efd; font-size: 1.15rem; }
+
+.profile-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+}
+@media (max-width: 700px) { .profile-grid { grid-template-columns: 1fr; } }
+
+.profile-field {
+    display: flex; flex-direction: column; gap: 6px;
+    background: #f8fafc; border-radius: 14px; padding: 14px 16px;
+}
+.profile-label { font-size: .78rem; color: #94a3b8; font-weight: 600; }
+.profile-value { font-size: .95rem; color: #052c65; font-weight: 700; }
+
+.password-form {
+    display: flex; flex-direction: column; gap: 16px; max-width: 420px;
+}
+.password-field { display: flex; flex-direction: column; gap: 8px; }
+.password-field label { font-size: .85rem; font-weight: 700; color: #052c65; }
+.password-field input {
+    height: 52px; background: #f5f7fb; border: 2px solid transparent;
+    border-radius: 14px; padding: 0 16px; font-size: .95rem;
+    outline: none; transition: .25s; font-family: inherit;
+}
+.password-field input:focus { background: #fff; border-color: #0d6efd; box-shadow: 0 4px 14px rgba(13,110,253,.12); }
+
+.password-save-btn {
+    background: linear-gradient(135deg, #0d6efd, #052c65);
+    color: #fff; border: none; border-radius: 14px;
+    padding: 13px 26px; font-weight: 700; font-size: .95rem;
+    cursor: pointer; transition: .2s; align-self: flex-start;
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: inherit;
+}
+.password-save-btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(13,110,253,.28); }
+.password-save-btn:disabled { opacity: .6; cursor: not-allowed; }
+/* =========================================================
+   🌟 كروت المحادثات بتبويب "سجل الاستفسارات"
+   ========================================================= */
+.query-history-list { display: flex; flex-direction: column; gap: 14px; }
+
+.conv-card {
+    background: #fff;
+    border-radius: 18px;
+    border: 1px solid #edf2f7;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    transition: .2s;
+    box-shadow: 0 6px 18px rgba(5,44,101,.04);
+}
+.conv-card:hover {
+    border-color: #0d6efd;
+    box-shadow: 0 10px 24px rgba(13,110,253,.1);
+    transform: translateY(-2px);
+}
+
+.conv-card-icon {
+    position: relative; flex-shrink: 0;
+    width: 46px; height: 46px; border-radius: 14px;
+    background: linear-gradient(135deg, #0d6efd, #052c65);
+    color: #fff; display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+}
+.conv-dot {
+    position: absolute; top: -3px; left: -3px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: #ef4444; border: 2px solid #fff;
+}
+
+.conv-card-body { flex: 1; min-width: 0; }
+.conv-card-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 6px; flex-wrap: wrap; }
+
+.conv-office-badge {
+    background: #e0f2fe; color: #0369a1; border-radius: 8px;
+    padding: 4px 10px; font-size: .8rem; font-weight: 700;
+}
+.conv-status-badge {
+    border-radius: 8px; padding: 4px 10px; font-size: .78rem; font-weight: 700;
+}
+.conv-status-badge.replied { background: #dcfce7; color: #15803d; }
+.conv-status-badge.pending { background: #fef3c7; color: #b45309; }
+
+.conv-preview {
+    margin: 0; color: #475569; font-size: .9rem;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.conv-count { font-size: .76rem; color: #94a3b8; font-weight: 600; }
+
+.conv-arrow { color: #cbd5e1; font-size: 1.1rem; flex-shrink: 0; }
+
+/* =========================================================
+   🌟 اختيار نوع الاستفسار (طلب خدمة / استفسار عن اللوائح والأنظمة)
+   ========================================================= */
+.inquiry-choice-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 10px;
+}
+@media (max-width: 700px) { .inquiry-choice-grid { grid-template-columns: 1fr; } }
+
+.inquiry-choice-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    background: #ffffff;
+    border: 1px solid #edf2f7;
+    border-radius: 20px;
+    padding: 30px 20px;
+    cursor: pointer;
+    transition: .25s;
+    font-family: 'Tajawal', sans-serif;
+}
+.inquiry-choice-btn:hover {
+    border-color: #0d6efd;
+    box-shadow: 0 10px 24px rgba(13,110,253,.1);
+    transform: translateY(-2px);
+}
+.inquiry-choice-btn i { font-size: 34px; color: #0d6efd; }
+.inquiry-choice-btn span { font-size: 17px; font-weight: 700; color: #052c65; }
+.inquiry-choice-btn small { color: #64748b; font-size: .85rem; line-height: 1.5; }
+
+.inquiry-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    color: #0d6efd;
+    font-weight: 700;
+    font-size: .9rem;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 14px;
+    font-family: 'Tajawal', sans-serif;
+}
+.inquiry-back-btn:hover { text-decoration: underline; }
+
+/* بطاقة عرض إجابة الاستفسار عن اللوائح والأنظمة */
+.qa-answer-card {
+    background: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 20px;
+    padding: 22px 24px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.qa-answer-text {
+    margin: 0;
+    color: #052c65;
+    font-size: .95rem;
+    line-height: 1.9;
+}

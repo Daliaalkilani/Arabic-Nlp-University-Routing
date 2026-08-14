@@ -1,0 +1,75 @@
+/* Toast.css — إشعار موحّد بديل عن alert() */
+
+.app-toast {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 16px 44px 16px 22px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  z-index: 10000;
+  direction: rtl;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 600;
+  max-width: 380px;
+  animation: appToastIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  overflow: hidden;
+}
+
+.app-toast-success { border: 1px solid rgba(13, 110, 253, 0.25); color: #052c65; }
+.app-toast-error   { border: 1px solid rgba(239, 68, 68, 0.35); color: #7f1d1d; }
+
+.app-toast-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+
+.app-toast-icon { font-size: 22px; flex-shrink: 0; }
+.app-toast-success .app-toast-icon { color: #0d6efd; animation: appToastPulse 1.5s infinite ease-in-out; }
+.app-toast-error .app-toast-icon { color: #ef4444; }
+
+.app-toast-close {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.5;
+}
+.app-toast-close:hover { opacity: 1; }
+
+.app-toast-progress {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  animation: appToastShrink linear forwards;
+}
+.app-toast-success .app-toast-progress { background: linear-gradient(90deg, #6ea8fe, #0d6efd); }
+.app-toast-error .app-toast-progress { background: linear-gradient(90deg, #fca5a5, #ef4444); }
+
+@keyframes appToastIn {
+  0% { bottom: -60px; opacity: 0; transform: scale(0.9); }
+  100% { bottom: 25px; opacity: 1; transform: scale(1); }
+}
+@keyframes appToastShrink {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+@keyframes appToastPulse {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.15); opacity: 1; }
+}

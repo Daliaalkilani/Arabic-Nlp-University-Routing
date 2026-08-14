@@ -1,0 +1,13 @@
+تعديل بسيط على routes.py — استبدلي السطر التالي بداخل دالة add_query():
+
+القديم:
+            return jsonify({
+                "message": "تم إرسال استفسارك وتحليله ذكياً بنجاح!",
+                "predictedDept": final_office
+            }), 201
+
+الجديد:
+            return jsonify({
+                "message": "تم إرسال استفسارك وتحليله بنجاح، وسيراجعه الموظف المختص قريباً!",
+                "predictedDept": final_office
+            }), 201
